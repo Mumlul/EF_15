@@ -1,0 +1,58 @@
+﻿<Page x:Class="EF_Core_15.Pages.TagPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:EF_Core_15.Pages"
+      xmlns:valid="clr-namespace:EF_Core_15.Validations"
+      mc:Ignorable="d"
+      Title="TagPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ListView 
+            ItemsSource="{Binding Tags}"
+            SelectedItem="{Binding Selecttag}"
+            MouseDoubleClick="RefreshChange"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <StackPanel Grid.Column="1">
+            <TextBox Name="TagName" materialDesign:HintAssist.Hint="Название тэга">
+                <TextBox.Text>
+                    <Binding Path="Newtagname">
+                        <Binding.ValidationRules>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=TagName,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <DockPanel LastChildFill="False">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button Content="Добавить" IsEnabled="{Binding Addbuttonenabled}" Click="AddTag"/>
+                    <Separator/>
+                    <Button Content="Изменить" IsEnabled="{Binding Changebuttonenabled}" Click="ChangeTag"/>
+                    <Separator/>
+                    <Button Content="Удалить" IsEnabled="{Binding Changebuttonenabled}" Click="DeleteTag"/>
+                </StackPanel>
+                <Button Content="Назад" DockPanel.Dock="Right" Click="GoBack"/>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,191 @@
+﻿<Page x:Class="EF_Core_15.Pages.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:valid="clr-namespace:EF_Core_15.Validations"
+      xmlns:local="clr-namespace:EF_Core_15.Pages"
+      mc:Ignorable="d"
+      Title="ProductPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox materialDesign:HintAssist.Hint="Поиск" Text="{Binding Searchtext,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+            <ListView Grid.Row="1" ItemsSource="{Binding Products}"
+                      SelectedItem="{Binding ChangeProduct}"
+                      MouseDoubleClick="ResetSelecProduct"
+                      >
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="1"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource ProductCard}">
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+            
+                                    <DockPanel>
+                                        <TextBlock Text="{Binding StringFormat=Название {0},Path=Name}" Style="{StaticResource Big}" DockPanel.Dock="Top"/>
+                                        <TextBlock Text="{Binding StringFormat=Цена: {0},Path=Price}" DockPanel.Dock="Right"/>
+                                        <TextBlock Text="{Binding StringFormat=Рейтинг {0},Path=Rating}" DockPanel.Dock="Left"/>
+                                    </DockPanel>
+                                    <DockPanel Grid.Row="1">
+                                        <TextBlock Text="{Binding StringFormat=Категория: {0},Path=Category.Name}" DockPanel.Dock="Top"/>
+                                        <TextBlock Text="{Binding StringFormat=Остаток: {0},Path=Stock}" DockPanel.Dock="Right"/>
+                                        <TextBlock Text="{Binding StringFormat=Описание: {0},Path=Description}" DockPanel.Dock="Left"/>
+                                    </DockPanel>
+                                    <ItemsControl Grid.Row="2"
+                                                  ItemsSource="{Binding Tags}"
+                                    >
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding StringFormat=#{0} ,Path=Name}"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListView>
+        </Grid>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="ProductName" materialDesign:HintAssist.Hint="Название товара">
+                <TextBox.Text>
+                    <Binding Path="NewProduct.Name">
+                        <Binding.ValidationRules>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=ProductName,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <TextBox Name="ProductDesc" materialDesign:HintAssist.Hint="Описание товара" TextWrapping="Wrap">
+                <TextBox.Text>
+                    <Binding Path="NewProduct.Description">
+                        <Binding.ValidationRules>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=ProductDesc,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <Label>Рейтинг товара</Label>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Slider Minimum="0" 
+                        Maximum="5" 
+                        Value="{Binding NewProduct.Rating,Mode=TwoWay}" 
+                        TickFrequency="0.1" 
+                        Width="200"
+                />
+                <TextBlock Text="{Binding NewProduct.Rating, StringFormat=F1}" 
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBox Name="ProductPrice" materialDesign:HintAssist.Hint="Цена" >
+                <TextBox.Text>
+                    <Binding Path="NewProduct.Price">
+                        <Binding.ValidationRules>
+                            <valid:Number/>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=ProductPrice,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <TextBox Name="ProductCount" materialDesign:HintAssist.Hint="Остаток" >
+                <TextBox.Text>
+                    <Binding Path="NewProduct.Stock">
+                        <Binding.ValidationRules>
+                            <valid:Number/>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=ProductCount,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ComboBox ItemsSource="{Binding Categories}"
+                      SelectedItem="{Binding SelectedCategory}"
+                      DisplayMemberPath="Name"
+                      materialDesign:HintAssist.Hint="Категория"
+            />
+            <ComboBox ItemsSource="{Binding Brands}"
+                      SelectedItem="{Binding SelectedBrand}"
+                      DisplayMemberPath="Name"
+                      materialDesign:HintAssist.Hint="Бренд"
+            />
+            <Label>Тэги</Label>
+            <ListBox ItemsSource="{Binding TagsName}"
+                     SelectionMode="Multiple"
+                     SelectionChanged="TagsListBox_SelectionChanged"
+                     x:Name="TagsListBox">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+            <DockPanel LastChildFill="False">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" DockPanel.Dock="Left">
+                    <Button Name="Change" Content="Применить Изменения" Click="ChangeProductData" IsEnabled="{Binding ChangeButton}"/>
+                    <Separator/>
+                    <Button Name="Add" Content="Добавить продукт" IsEnabled="{Binding AddButton}" Click="AddProduct"/>
+                    <Separator/>
+                    <Button Name="Delete" Content="Удалить продукт" IsEnabled="{Binding ChangeButton}" Click="DeleteProduct"/>
+                </StackPanel>
+                <Button Content="Назад" Click="GoBack" DockPanel.Dock="Right"/>
+            </DockPanel>
+           
+        </StackPanel>
+        
+    </Grid>
+</Page>

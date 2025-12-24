@@ -1,0 +1,39 @@
+﻿<Page x:Class="EF_Core_15.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:EF_Core_15.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:validations="clr-namespace:EF_Core_15.Validations"
+      xmlns:convertors="clr-namespace:EF_Core_15.Convertors"
+      xmlns:efCore15="clr-namespace:EF_Core_15"
+      xmlns:passw="clr-namespace:EF_Core_15.Extencion"
+      mc:Ignorable="d"
+      Title="Login" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" >
+            <Label >Для того что бы войти как администратор вам необходимо ввести пароль</Label>
+            <Separator/>
+            <PasswordBox
+                PasswordChar="#"
+                PasswordChanged="PasswordBox_PasswordChanged"
+                passw:PasswordBoxPasword.Password="{Binding Password,Mode=TwoWay}"/>
+            <Separator Width="10" Visibility="Hidden"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Войти как администратор" 
+                        Name="ManagerButton"
+                        IsEnabled="{Binding IsPasswordCorrect}"
+                        Click="GoToMain"
+                        />
+                <Separator/>
+                <Button Content="Войти как покупатель" Click="GoToMain"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>

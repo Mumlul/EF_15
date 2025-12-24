@@ -1,0 +1,58 @@
+﻿<Page x:Class="EF_Core_15.Pages.BrandPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:EF_Core_15.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:valid="clr-namespace:EF_Core_15.Validations"
+      mc:Ignorable="d"
+      Title="BrandPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ListView 
+            ItemsSource="{Binding Brands}"
+            SelectedItem="{Binding SelectedBrand}"
+            MouseDoubleClick="RefreshChange"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <StackPanel Grid.Column="1">
+            <TextBox Name="BrandName" materialDesign:HintAssist.Hint="Название бренда">
+                <TextBox.Text>
+                    <Binding Path="Newbrandname">
+                        <Binding.ValidationRules>
+                            <valid:Empty/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl ItemsSource="{Binding ElementName=BrandName,Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <DockPanel LastChildFill="False">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button Content="Добавить" IsEnabled="{Binding Addbuttonenabled}" Click="AddBrand"/>
+                    <Separator/>
+                    <Button Content="Изменить" IsEnabled="{Binding Changebuttonenabled}" Click="ChangeBrand"/>
+                    <Separator/>
+                    <Button Content="Удалить" IsEnabled="{Binding Changebuttonenabled}" Click="DeleteBrand"/>
+                </StackPanel>
+                <Button Content="Назад" DockPanel.Dock="Right" Click="GoBack"/>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Page>

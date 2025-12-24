@@ -1,0 +1,149 @@
+﻿<Page x:Class="EF_Core_15.Pages.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:EF_Core_15.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      Title="WieldBabzunis">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Дикий бабзунис" Style="{StaticResource Header}"/>
+                <Button x:Name="SortButton" Content="Сортировка" Click="SortButton_Click"/>
+                <Separator/>
+                <Button x:Name="FilterButton" Content="Фильтровать" Click="FilterButton_Click"/>
+                <Separator/>
+                <StackPanel IsEnabled="{Binding ManagerButtons}">
+                    <Button x:Name="AddProducts" Content="Добавить продукт" Click="GotoProducts"/>
+                    <Separator/>
+                    <Button x:Name="Categories" Content="Добавить категорию"  Click="GotoCategory"/>
+                    <Separator/>
+                    <Button x:Name="Tags" Content="Добавить тэг" Click="GotoTags"/>
+                    <Separator/>
+                    <Button x:Name="Brands" Content="Добавить бренд" Click="GotoBrands"/>
+                </StackPanel>
+                <TextBlock Text="{Binding StringFormat=All {0},Path=AllCount}"/>
+                <TextBlock Text="{Binding StringFormat=Current {0},Path=CurrentCount}"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="0">
+                <Popup x:Name="SortPopup" PlacementTarget="{Binding ElementName=SortButton}" Placement="Right" StaysOpen="False">
+                    <Border Background="White">
+                        <StackPanel>
+                            <TextBlock Text="Сортировка по:" FontWeight="Bold"/>
+                            <RadioButton Content="По имени (а-я)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По имени (я-а)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По цене (убывание)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По цене (возрастание)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По дате (убывание)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По дате (возрастание)" Checked="SortRadioButton_Checked"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+                
+                <Popup x:Name="FilterPopup" PlacementTarget="{Binding ElementName=FilterButton}" Placement="Right" StaysOpen="False">
+                    <Border Background="White">
+                        <StackPanel>
+                            <TextBlock Text="Фильтровать по:" FontWeight="Bold"/>
+                            <CheckBox Content="По категория"  Name="CheckNameSort" IsChecked="{Binding FilterCategory}"/>
+                            <ComboBox ItemsSource="{Binding CategoriesName}"
+                                      SelectedItem="{Binding SelectedCategory}"
+                                      DisplayMemberPath="Name"
+                                      IsEnabled="{Binding FilterCategory}"
+                                      />
+                            <CheckBox Content="По бренду"  Name="CheckCountSort" IsChecked="{Binding FilterBrand}"/>
+                            <ComboBox ItemsSource="{Binding BrandsName}"
+                                      SelectedItem="{Binding SelectedBrand}"
+                                      DisplayMemberPath="Name"
+                                      IsEnabled="{Binding FilterBrand}"/>
+                            <CheckBox Content="По цене"  Name="CheckPriceSort" IsChecked="{Binding PriceFilter}"/>
+                            <StackPanel Name="PricePanel" IsEnabled="{Binding PriceFilter}">
+                                <Label>ОТ</Label>
+                                <TextBox Text="{Binding MinPrice}"/>
+                                <Label>ДО</Label>
+                                <TextBox Text="{Binding MaxPrice}"/>
+                                <Button Content="Применить фильтр стоимости" Click="FilterPrice"/>
+                            </StackPanel>
+                            <Button Content="Отменить фильтры" Click="RefreshFilter" />
+                        </StackPanel>
+                    </Border>
+                </Popup>
+            </StackPanel>
+            <Grid  Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <TextBox materialDesign:HintAssist.Hint="Поиск" Text="{Binding SearchText,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                </StackPanel>
+                <ScrollViewer Grid.Row="1">
+                <ItemsControl ItemsSource="{Binding Products}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="2"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource ProductCard}" Loaded="Test">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+            
+                                    <DockPanel>
+                                        <TextBlock Text="{Binding StringFormat=Цена {0},Path=Price}" DockPanel.Dock="Right"/>
+                                        <TextBlock Text="{Binding StringFormat=Название товара {0},Path=Name}" Style="{StaticResource Big}"   DockPanel.Dock="Top"/>
+                                        <TextBlock Text="{Binding StringFormat=⭐рейтинг {0},Path=Rating}" DockPanel.Dock="Left"/>
+                                    </DockPanel>
+                                    
+                                    <DockPanel Grid.Row="1">
+                                        <TextBlock Text="{Binding StringFormat=Категория {0},Path=Category.Name}" DockPanel.Dock="Top"/>
+                                        
+                                        <StackPanel DockPanel.Dock="Right">
+                                            <Separator/>
+                                            <TextBlock Text="{Binding StringFormat=Остаток: {0},Path=Stock}" />
+                                        </StackPanel>
+                                        
+                                        <StackPanel DockPanel.Dock="Left">
+                                            <Separator/>
+                                            <TextBlock Text="{Binding StringFormat=Описание {0},Path=Description}" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                    
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                        <ItemsControl Grid.Row="2"
+                                                      ItemsSource="{Binding Tags}"
+                                        >
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding StringFormat=#{0} ,Path=Name}"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
