@@ -33,8 +33,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAABUTAAAAAAAAAAAwwCYTAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-12-24T20:30:44.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T20:30:44.491Z"
             },
             {
               "$type": "Document",
@@ -42,9 +41,9 @@
               "Title": "ProductPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\Pages\\ProductPage.xaml.cs",
               "RelativeDocumentMoniker": "EF_Core_15\\Pages\\ProductPage.xaml.cs",
-              "ToolTip": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\Pages\\ProductPage.xaml.cs*",
-              "RelativeToolTip": "EF_Core_15\\Pages\\ProductPage.xaml.cs*",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAowIcAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "RelativeToolTip": "EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-24T20:25:25.975Z",
               "EditorCaption": ""
@@ -59,8 +58,7 @@
               "RelativeToolTip": "EF_Core_15\\Pages\\Login.xaml.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAMwD4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T20:24:19.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-24T20:24:19.124Z"
             }
           ]
         }
