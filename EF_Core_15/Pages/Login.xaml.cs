@@ -57,7 +57,18 @@ public partial class Login : Page,INotifyPropertyChanged
             if (btn.Name != "ManagerButton")
                 NavigationService.Navigate(new Main(false));
             else
-                NavigationService.Navigate(new Main(true));
+            {
+                if(Password=="1234")
+                {
+                    NavigationService.Navigate(new Main(true));
+                }
+                else
+                {
+                    MessageBox.Show("ПАРОЛЬ НЕ ВЕРНЫЙ");
+                }
+               
+            }
+                
     }
     
     private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)

@@ -25,7 +25,6 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="Войти как администратор" 
                         Name="ManagerButton"
-                        IsEnabled="{Binding IsPasswordCorrect}"
                         Click="GoToMain"
                         />
                 <Separator/>
