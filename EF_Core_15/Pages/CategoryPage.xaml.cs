@@ -24,7 +24,7 @@ public partial class CategoryPage : Page,INotifyPropertyChanged
     
     #region properties
 
-        public TestContext db = DbService.Instance.Context;
+        public Ef15Context db = DbService.Instance.Context;
         public ObservableCollection<Category> Categories { get => _categories;
             set
             {

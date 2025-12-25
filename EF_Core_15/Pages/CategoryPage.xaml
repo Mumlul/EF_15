@@ -27,11 +27,11 @@
         </ListView>
         
         <StackPanel Grid.Column="1">
-            <TextBox Name="CategoryName" materialDesign:HintAssist.Hint="Название категории">
+            <TextBox Name="CategoryName" materialDesign:HintAssist.Hint="Название категории" Validation.ErrorTemplate="{x:Null}">
                 <TextBox.Text>
                     <Binding Path="Newcategoryname" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Empty/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -43,6 +43,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            
             <DockPanel LastChildFill="False">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                     <Button Content="Добавить" IsEnabled="{Binding Addbuttonenabled}" Click="AddCategory"/>

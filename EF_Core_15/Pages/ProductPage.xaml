@@ -75,11 +75,11 @@
             </ListView>
         </Grid>
         <StackPanel Grid.Column="1">
-            <TextBox Name="ProductName" materialDesign:HintAssist.Hint="Название товара">
+            <TextBox Name="ProductName" materialDesign:HintAssist.Hint="Название товара" Validation.ErrorTemplate="{x:Null}">
                 <TextBox.Text>
-                    <Binding Path="NewProduct.Name">
+                    <Binding Path="NewProduct.Name" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Empty/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -87,15 +87,15 @@
             <ItemsControl ItemsSource="{Binding ElementName=ProductName,Path=(Validation.Errors)}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Path=ErrorContent}"/>
+                        <TextBlock Text="{Binding Path=ErrorContent}"  Style="{StaticResource ValidationErrorText}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <TextBox Name="ProductDesc" materialDesign:HintAssist.Hint="Описание товара" TextWrapping="Wrap">
+            <TextBox Name="ProductDesc" materialDesign:HintAssist.Hint="Описание товара" TextWrapping="Wrap" Validation.ErrorTemplate="{x:Null}">
                 <TextBox.Text>
-                    <Binding Path="NewProduct.Description">
+                    <Binding Path="NewProduct.Description" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Empty/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -103,7 +103,7 @@
             <ItemsControl ItemsSource="{Binding ElementName=ProductDesc,Path=(Validation.Errors)}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}"/>
+                        <TextBlock Text="{Binding ErrorContent}"  Style="{StaticResource ValidationErrorText}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -118,12 +118,12 @@
                 <TextBlock Text="{Binding NewProduct.Rating, StringFormat=F1}" 
                            VerticalAlignment="Center"/>
             </StackPanel>
-            <TextBox Name="ProductPrice" materialDesign:HintAssist.Hint="Цена" >
+            <TextBox Name="ProductPrice" materialDesign:HintAssist.Hint="Цена" Validation.ErrorTemplate="{x:Null}" >
                 <TextBox.Text>
-                    <Binding Path="NewProduct.Price">
+                    <Binding Path="NewProduct.Price" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Number/>
-                            <valid:Empty/>
+                            <valid:Number ValidatesOnTargetUpdated="True"/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -131,16 +131,16 @@
             <ItemsControl ItemsSource="{Binding ElementName=ProductPrice,Path=(Validation.Errors)}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}"/>
+                        <TextBlock Text="{Binding ErrorContent}"  Style="{StaticResource ValidationErrorText}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <TextBox Name="ProductCount" materialDesign:HintAssist.Hint="Остаток" >
+            <TextBox Name="ProductCount" materialDesign:HintAssist.Hint="Остаток" Validation.ErrorTemplate="{x:Null}">
                 <TextBox.Text>
-                    <Binding Path="NewProduct.Stock">
+                    <Binding Path="NewProduct.Stock" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Number/>
-                            <valid:Empty/>
+                            <valid:Number ValidatesOnTargetUpdated="True"/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -148,7 +148,7 @@
             <ItemsControl ItemsSource="{Binding ElementName=ProductCount,Path=(Validation.Errors)}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}"/>
+                        <TextBlock Text="{Binding ErrorContent}"  Style="{StaticResource ValidationErrorText}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

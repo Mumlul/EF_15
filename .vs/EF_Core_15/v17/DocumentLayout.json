@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Models\\Ef15Context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EF_Core_15\\Models\\Ef15Context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\service\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\service\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\pages\\tagpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\pages\\tagpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\pages\\productpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\pages\\productpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|c:\\users\\st310-07\\documents\\\u043F\u043B\u043E\u0441\u043A\u0438\u0445\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\ef_core_15\\pages\\brandpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E22F953C-8D7D-4DBE-8231-D5B504DAD2BF}|EF_Core_15\\EF_Core_15.csproj|solutionrelative:ef_core_15\\pages\\brandpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DbService.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Service\\DbService.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Service\\DbService.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Service\\DbService.cs",
+              "RelativeToolTip": "EF_Core_15\\Service\\DbService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvxkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:54:41.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TagPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\TagPage.xaml.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Pages\\TagPage.xaml.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\TagPage.xaml.cs",
+              "RelativeToolTip": "EF_Core_15\\Pages\\TagPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:54:38.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "RelativeToolTip": "EF_Core_15\\Pages\\ProductPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:54:34.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Main.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\Main.xaml.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Pages\\Main.xaml.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\Main.xaml.cs",
+              "RelativeToolTip": "EF_Core_15\\Pages\\Main.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:54:29.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BrandPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\BrandPage.xaml.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Pages\\BrandPage.xaml.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Pages\\BrandPage.xaml.cs",
+              "RelativeToolTip": "EF_Core_15\\Pages\\BrandPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:54:12.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Models\\Product.cs",
+              "RelativeToolTip": "EF_Core_15\\Models\\Product.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:53:58.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ef15Context.cs",
+              "DocumentMoniker": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Models\\Ef15Context.cs",
+              "RelativeDocumentMoniker": "EF_Core_15\\Models\\Ef15Context.cs",
+              "ToolTip": "C:\\Users\\st310-07\\Documents\\\u041F\u043B\u043E\u0441\u043A\u0438\u0445\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)\\EF_Core_15\\Models\\Ef15Context.cs",
+              "RelativeToolTip": "EF_Core_15\\Models\\Ef15Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T03:53:51.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

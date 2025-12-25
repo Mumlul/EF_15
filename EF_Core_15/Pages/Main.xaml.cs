@@ -29,7 +29,7 @@ public partial class Main : Page,INotifyPropertyChanged
     #endregion
     
     #region Properties
-        public TestContext db = DbService.Instance.Context;
+        public Ef15Context db = DbService.Instance.Context;
         public ObservableCollection<Product> Products { get;} = new();
         public ObservableCollection<Brand> BrandsName { get; } = new();
         public ObservableCollection<Category> CategoriesName { get; } = new();

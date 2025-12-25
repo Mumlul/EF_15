@@ -24,7 +24,7 @@ public partial class ProductPage : Page,INotifyPropertyChanged
     #endregion
     
     #region properties
-        public TestContext db = DbService.Instance.Context;
+        public Ef15Context db = DbService.Instance.Context;
         public ObservableCollection<Product> Products { get;} = new();
         public bool AddButton { get => _addbutton; set => SetField(ref _addbutton, value); }
         public bool ChangeButton { get => _changebutton; set =>SetField(ref _changebutton, value); }

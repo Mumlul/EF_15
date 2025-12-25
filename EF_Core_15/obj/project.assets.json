@@ -5017,23 +5017,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mumlul\\.nuget\\packages\\": {},
+    "C:\\Users\\st310-07\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\EF_Core_15.csproj",
+      "projectUniqueName": "C:\\Users\\st310-07\\Documents\\Плоских\\Новая папка (3)\\EF_Core_15\\EF_Core_15.csproj",
       "projectName": "EF_Core_15",
-      "projectPath": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\EF_Core_15.csproj",
-      "packagesPath": "C:\\Users\\mumlul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mumlul\\RiderProjects\\EF_Core_15\\EF_Core_15\\obj\\",
+      "projectPath": "C:\\Users\\st310-07\\Documents\\Плоских\\Новая папка (3)\\EF_Core_15\\EF_Core_15.csproj",
+      "packagesPath": "C:\\Users\\st310-07\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\st310-07\\Documents\\Плоских\\Новая папка (3)\\EF_Core_15\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mumlul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\st310-07\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5042,6 +5042,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\st310-07\\.nuget\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5108,7 +5110,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -4,8 +4,8 @@ namespace EF_Core_15.Service;
 
 public class DbService
 {
-    private TestContext _context;
-    public TestContext Context=>_context;
+    private Ef15Context _context;
+    public Ef15Context Context =>_context;
 
     private static DbService? instance;
 
@@ -21,6 +21,6 @@ public class DbService
     
     public DbService()
     {
-        _context = new TestContext();
+        _context = new Ef15Context();
     }
 }

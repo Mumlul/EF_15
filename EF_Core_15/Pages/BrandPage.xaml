@@ -27,11 +27,11 @@
         </ListView>
         
         <StackPanel Grid.Column="1">
-            <TextBox Name="BrandName" materialDesign:HintAssist.Hint="Название бренда">
+            <TextBox Name="BrandName" materialDesign:HintAssist.Hint="Название бренда" Validation.ErrorTemplate="{x:Null}">
                 <TextBox.Text>
-                    <Binding Path="Newbrandname">
+                    <Binding Path="Newbrandname" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <valid:Empty/>
+                            <valid:Empty ValidatesOnTargetUpdated="True"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
@@ -39,7 +39,7 @@
             <ItemsControl ItemsSource="{Binding ElementName=BrandName,Path=(Validation.Errors)}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}"/>
+                        <TextBlock Text="{Binding ErrorContent}"  Style="{StaticResource ValidationErrorText}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

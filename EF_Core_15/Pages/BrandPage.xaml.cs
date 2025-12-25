@@ -21,7 +21,7 @@ public partial class BrandPage : Page,INotifyPropertyChanged
     #endregion
     
     #region properties
-        public TestContext db = DbService.Instance.Context;
+        public Ef15Context db = DbService.Instance.Context;
         public ObservableCollection<Brand> Brands { get => _brands;
             set
             {

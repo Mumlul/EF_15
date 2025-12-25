@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EF_Core_15.Models;
 
-public partial class TestContext : DbContext
+public partial class Ef15Context : DbContext
 {
-    public TestContext()
+    public Ef15Context()
     {
     }
 
-    public TestContext(DbContextOptions<TestContext> options)
+    public Ef15Context(DbContextOptions<Ef15Context> options)
         : base(options)
     {
     }
@@ -25,12 +25,14 @@ public partial class TestContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=HOME-PC\\MSSQLSERVER01;Database=Test;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=False;");
+        => optionsBuilder.UseSqlServer("Server=sql.ects;Database=ef_15;User Id=student_07;Password=student_07;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Brand>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK_brands");
+
             entity.ToTable("brands$");
 
             entity.Property(e => e.Id)
@@ -43,6 +45,8 @@ public partial class TestContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK_categories");
+
             entity.ToTable("categories$");
 
             entity.Property(e => e.Id)
@@ -55,6 +59,8 @@ public partial class TestContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK_products");
+
             entity.ToTable("products$");
 
             entity.Property(e => e.Id)
@@ -70,17 +76,17 @@ public partial class TestContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("name");
             entity.Property(e => e.Price).HasColumnName("price");
-            entity.Property(e => e.Rating)
-                .HasDefaultValue(0.0)
-                .HasColumnName("rating");
+            entity.Property(e => e.Rating).HasColumnName("rating");
             entity.Property(e => e.Stock).HasColumnName("stock");
 
             entity.HasOne(d => d.Brand).WithMany(p => p.Products)
                 .HasForeignKey(d => d.BrandId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_products_brands");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_products_categories");
 
             entity.HasMany(d => d.Tags).WithMany(p => p.Products)
@@ -96,7 +102,7 @@ public partial class TestContext : DbContext
                         .HasConstraintName("FK_product_tags_products"),
                     j =>
                     {
-                        j.HasKey("ProductId", "TagId");
+                        j.HasKey("ProductId", "TagId").HasName("PK_product_tags");
                         j.ToTable("product_tags$");
                         j.IndexerProperty<int>("ProductId").HasColumnName("product_id");
                         j.IndexerProperty<int>("TagId").HasColumnName("tag_id");
@@ -105,6 +111,8 @@ public partial class TestContext : DbContext
 
         modelBuilder.Entity<Tag>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK_tags");
+
             entity.ToTable("tags$");
 
             entity.Property(e => e.Id)

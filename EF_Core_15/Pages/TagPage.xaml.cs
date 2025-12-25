@@ -21,7 +21,7 @@ public partial class TagPage : Page, INotifyPropertyChanged
     #endregion
     
     #region properties
-        public TestContext db = DbService.Instance.Context;
+        public Ef15Context db = DbService.Instance.Context;
         public ObservableCollection<Tag> Tags { get => _tags;
             set
             {
