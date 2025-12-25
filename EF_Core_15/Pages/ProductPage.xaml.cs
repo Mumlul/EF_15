@@ -171,11 +171,18 @@ public partial class ProductPage : Page,INotifyPropertyChanged
         }
         private void DeleteProduct(object sender, RoutedEventArgs e)
         {
-            db.Products.Remove(ChangeProduct);
-            db.SaveChanges();
-            Products.Remove(ChangeProduct);
-            _productsView.Refresh();
-            ChangeProduct = null;
+
+            var result = MessageBox.Show("Удалить товар?", "Подтверждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                db.Products.Remove(ChangeProduct);
+                db.SaveChanges();
+                Products.Remove(ChangeProduct);
+                _productsView.Refresh();
+                ChangeProduct = null;
+            }
+
+            
         }
         
     #endregion

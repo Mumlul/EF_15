@@ -115,12 +115,18 @@ public partial class CategoryPage : Page,INotifyPropertyChanged
         }
         private void DeleteCategory(object sender, RoutedEventArgs e)
         {
+        var result = MessageBox.Show("Удалить товар?", "Подтверждение", MessageBoxButton.YesNo);
+        if (result == MessageBoxResult.Yes)
+        {
             db.Categories.Remove(SelectedCategory);
             db.SaveChanges();
             _productsView.Refresh();
             Categories.Remove(SelectedCategory);
             SelectedCategory = null;
             Newcategoryname = "";
+        }
+
+           
         }
     #endregion
     

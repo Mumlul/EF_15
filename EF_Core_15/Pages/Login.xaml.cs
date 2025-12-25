@@ -55,12 +55,18 @@ public partial class Login : Page,INotifyPropertyChanged
     {
         if(obj is Button btn)
             if (btn.Name != "ManagerButton")
-                NavigationService.Navigate(new Main(false));
+            {
+                var result = MessageBox.Show("ВЫ УВЕРЕНЫ?", "Подтверждение", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                    NavigationService.Navigate(new Main(false));
+            }
             else
             {
                 if(Password=="1234")
                 {
-                    NavigationService.Navigate(new Main(true));
+                    var result = MessageBox.Show("ВЫ УВЕРЕНЫ?", "Подтверждение", MessageBoxButton.YesNo);
+                    if (result == MessageBoxResult.Yes)
+                        NavigationService.Navigate(new Main(true));
                 }
                 else
                 {

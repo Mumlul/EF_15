@@ -95,7 +95,8 @@ public partial class Ef15Context : DbContext
                     r => r.HasOne<Tag>().WithMany()
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_product_tags_tags"),
+                        .HasConstraintName("FK_product_tags_tags")
+                        .OnDelete(DeleteBehavior.Cascade),
                     l => l.HasOne<Product>().WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.ClientSetNull)

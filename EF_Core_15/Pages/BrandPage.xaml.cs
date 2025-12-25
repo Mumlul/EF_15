@@ -111,12 +111,16 @@ public partial class BrandPage : Page,INotifyPropertyChanged
         }
         private void DeleteBrand(object sender, RoutedEventArgs e)
         {
-            db.Brands.Remove(SelectedBrand);
-            db.SaveChanges();
-            _productsView.Refresh();
-            Brands.Remove(SelectedBrand);
-            SelectedBrand = null;
-            Newbrandname = "";
+            var result = MessageBox.Show("Удалить товар?", "Подтверждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                db.Brands.Remove(SelectedBrand);
+                db.SaveChanges();
+                _productsView.Refresh();
+                Brands.Remove(SelectedBrand);
+                SelectedBrand = null;
+                Newbrandname = "";
+            }
         }
     #endregion
 

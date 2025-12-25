@@ -112,6 +112,9 @@ public partial class TagPage : Page, INotifyPropertyChanged
         }
         private void DeleteTag(object sender, RoutedEventArgs e)
         {
+        var result = MessageBox.Show("Удалить товар?", "Подтверждение", MessageBoxButton.YesNo);
+        if (result == MessageBoxResult.Yes)
+        {
             db.Tags.Remove(Selecttag);
             db.SaveChanges();
             Tags.Remove(Selecttag);
@@ -119,6 +122,8 @@ public partial class TagPage : Page, INotifyPropertyChanged
             Selecttag = null;
             Newtagname = "";
         }
+    }
+           
     #endregion
     
     #region navigations
