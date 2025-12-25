@@ -42,8 +42,8 @@
                             <RadioButton Content="По имени (я-а)" Checked="SortRadioButton_Checked"/>
                             <RadioButton Content="По цене (убывание)" Checked="SortRadioButton_Checked"/>
                             <RadioButton Content="По цене (возрастание)" Checked="SortRadioButton_Checked"/>
-                            <RadioButton Content="По дате (убывание)" Checked="SortRadioButton_Checked"/>
-                            <RadioButton Content="По дате (возрастание)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По кол-ву (убывание)" Checked="SortRadioButton_Checked"/>
+                            <RadioButton Content="По кол-ву (возрастание)" Checked="SortRadioButton_Checked"/>
                         </StackPanel>
                     </Border>
                 </Popup>

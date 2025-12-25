@@ -135,11 +135,11 @@ public partial class Main : Page,INotifyPropertyChanged
                 case "По цене (возрастание)":
                     _productsView.SortDescriptions.Add(new SortDescription(nameof(Product.Price), ListSortDirection.Ascending));
                     break;
-                case "По дате (убывание)":
-                    _productsView.SortDescriptions.Add(new SortDescription(nameof(Product.CreatedAt), ListSortDirection.Descending));
+                case "По кол-ву (убывание)":
+                    _productsView.SortDescriptions.Add(new SortDescription(nameof(Product.Stock), ListSortDirection.Descending));
                     break;
-                case "По дате (возрастание)":
-                    _productsView.SortDescriptions.Add(new SortDescription(nameof(Product.CreatedAt), ListSortDirection.Ascending));
+                case "По кол-ву (возрастание)":
+                    _productsView.SortDescriptions.Add(new SortDescription(nameof(Product.Stock), ListSortDirection.Ascending));
                     break;
             }
             RefreshView();
