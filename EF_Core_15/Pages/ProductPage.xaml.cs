@@ -120,7 +120,6 @@ public partial class ProductPage : Page,INotifyPropertyChanged
                 TagsName.Add(tag);
             _productsView = CollectionViewSource.GetDefaultView(Products);
             _productsView.Filter = Filter;
-            MessageBox.Show(NewProduct.Rating.ToString());
             DataContext = this;
             Application.Current.MainWindow.Title = "Страница с продуктами";
         }
